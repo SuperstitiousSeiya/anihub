@@ -10,7 +10,7 @@ export default async function RecentAnimeCards() {
     return (
         <>
             {results.map((item, index) => (
-                <RecentAnimeCard key={item.id + index} {...item } />))}
+                <RecentAnimeCard key={item.id + index} {...item} />))}
         </>
     )
 }

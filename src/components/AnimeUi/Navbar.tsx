@@ -1,11 +1,16 @@
+"use client"
 import Link from 'next/link'
 import React from 'react'
-import { PlayIcon, StarIcon } from "lucide-react";
 import { Button } from '../ui/button';
 import Image from 'next/image';
+import SearchModal from './SearchModal';
+
+
+
 export default function Navbar() {
+
     return (
-        <header className="bg-white dark:bg-gray-800 shadow-md top-0 fixed z-50 w-full">
+        <header className="bg-white dark:bg-background shadow-md top-0 fixed z-50 w-full">
             <div className="container mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-lg font-semibold" prefetch={false}>
                     <MountainIcon className="w-6 h-6" />
@@ -20,11 +25,11 @@ export default function Navbar() {
                         Home
                     </Link>
                     <Link
-                        href="/trending"
+                        href="/categories"
                         className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
                         prefetch={false}
                     >
-                        Trending
+                        Categories
                     </Link>
                     <Link
                         href="#"
@@ -42,10 +47,8 @@ export default function Navbar() {
                     </Link>
                 </nav>
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="icon" className="rounded-full">
-                        <SearchIcon className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-                        <span className="sr-only">Search</span>
-                    </Button>
+                        <SearchModal></SearchModal>
+
                     <Button variant="ghost" size="icon" className="rounded-full">
                         <Image src="/placeholder.svg" width="32" height="32" className="rounded-full" alt="Avatar" />
                         <span className="sr-only">User Menu</span>

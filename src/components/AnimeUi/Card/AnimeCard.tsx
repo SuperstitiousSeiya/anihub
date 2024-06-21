@@ -6,12 +6,13 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlayIcon, StarIcon } from 'lucide-react';
 import { Anime } from '@/lib/typings/anime';
+import HtmlText from '../HTMLText';
 
 export default function AnimeCard({ image, id, title, description, rating }: Anime) {
     return (
         <Card className="shrink-0 w-[250px]  lg:w-[350px] md:w-[300px] h-full">
             <div className="relative group">
-                <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
+                <Link href={`/${id}`} className="absolute inset-0 z-10" prefetch={false}>
                     <span className="sr-only">View</span>
                 </Link>
                 <Image
@@ -30,9 +31,9 @@ export default function AnimeCard({ image, id, title, description, rating }: Ani
                                 <span>{rating}</span>
                             </div>
                         </div>
-                        <p className="text-gray-300 line-clamp-5 text-wrap">
+                        <HtmlText className="text-gray-300 line-clamp-5 text-wrap">
                             {description}
-                        </p>
+                        </HtmlText>
                         <div className="flex items-center gap-4 mt-4">
                             <Button variant="outline" size="sm">
                                 <PlayIcon className="w-4 h-4 mr-2" />

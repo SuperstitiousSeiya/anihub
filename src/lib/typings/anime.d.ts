@@ -42,16 +42,16 @@ enum AnimeType {
 }
 
 
-interface DateInfo {
+export interface DateInfo {
     year: number;
     month: number;
     day: number;
 }
 
-interface Recommendation {
+export interface Recommendation {
     id: string;
     malId: string;
-    title: string[];
+    title: Title;
     status: string;
     episodes: number;
     image: string;
@@ -60,7 +60,7 @@ interface Recommendation {
     type: string;
 }
 
-interface VoiceActors {
+export interface VoiceActors {
     id: string;
     language: string;
     name: Name;
@@ -68,16 +68,16 @@ interface VoiceActors {
     imageHash?: string;
 }
 
-interface Character {
+export interface Character {
     id: string;
     role: string;
-    name: string[];
+    name: Name;
     image: string;
     imageHash: string;
-    voiceActors: string[];
+    voiceActors: VoiceActors[];
 }
 
-interface Relation {
+export interface Relation {
     id: number;
     relationType: string;
     malId: number;
@@ -91,7 +91,7 @@ interface Relation {
     rating: number;
 }
 
-interface Episode {
+export interface Episode {
     id: string;
     title: string;
     image: string;

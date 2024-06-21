@@ -12,7 +12,7 @@ export default function AnimeCard({ image, title, episodeNumber, id, episodeId, 
     return (
         <Card className="shrink-0 w-[200px] grow-1  lg:w-[250px] md:w-[200px] h-full">
             <div className="relative group">
-                <Link href={`/watch/${episodeId}`} className="absolute inset-0 z-10" prefetch={false}>
+                <Link href={`/${id}/${episodeId}`} className="absolute inset-0 z-10" prefetch={false}>
                     <span className="sr-only">View</span>
                 </Link>
                 <Image
@@ -29,7 +29,7 @@ export default function AnimeCard({ image, title, episodeNumber, id, episodeId, 
                         </div>
                         <div className="flex items-center gap-4 mt-4">
 
-                        <Button variant="outline" size="sm">
+                            <Button variant="outline" size="sm">
                                 <PlayIcon className="w-4 h-4 mr-2" />
                                 Episode {episodeNumber}
                             </Button>
@@ -42,10 +42,8 @@ export default function AnimeCard({ image, title, episodeNumber, id, episodeId, 
                             <h3 className="text-md font-semibold text-gray-50 text-wrap">{title.english}</h3>
 
                         </div>
-                        <div className="flex items-center gap-4 mt-4 text-secondary">
-                           
-                                Episode {episodeNumber}
-                         
+                        <div className="flex items-center gap-4 mt-4 text-secondary dark:text-white">
+                            Episode {episodeNumber}
                         </div>
                     </div>
                 </div>

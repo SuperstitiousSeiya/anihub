@@ -3,7 +3,6 @@
 import Link from "next/link"
 
 import HeroCarousel from "@/components/anime/main/HeroCarousel"
-
 import PopularCards from "@/components/anime/main/Popular";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import TrendingCards from "@/components/anime/main/TrendingCards";
@@ -11,10 +10,8 @@ import RecentAnimeCards from "@/components/anime/main/RecentAnimeCards";
 
 
 export default async function HomePage() {
-
-
   return (
-    <div className="w-full min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div className="w-full min-h-screen bg-gray-100 dark:bg-background text-gray-900 dark:text-gray-100">
 
       <div className="container mx-auto mt-4">
         <HeroCarousel />
@@ -62,11 +59,14 @@ export default async function HomePage() {
             View All
           </Link>
         </div>
-        <div className="flex gap-10 pb-2 flex-wrap justify-center">
-          <RecentAnimeCards />
-        </div>
+        <ScrollArea>
+          <div className="flex gap-10 pb-2">
+            <RecentAnimeCards />
+          </div>
+          <ScrollBar orientation="horizontal" className="bg-background" />
+        </ScrollArea>
       </section>
-      <section className="container mx-auto py-12 md:py-16 lg:py-20">
+      <section className="container mx-auto py-12 md:py-16 lg:py-20 bg-secondary">
         <div className="flex items-center justify-between mb-8 md:mb-10 lg:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Anime by Genre</h2>
           <Link href="#" className="text-primary hover:text-primary-500 transition-colors" prefetch={false}>
@@ -147,47 +147,6 @@ function ActivityIcon(props: any) {
   )
 }
 
-
-function ArrowLeftIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m12 19-7-7 7-7" />
-      <path d="M19 12H5" />
-    </svg>
-  )
-}
-
-
-function ArrowRightIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12h14" />
-      <path d="m12 5 7 7-7 7" />
-    </svg>
-  )
-}
 
 
 function DramaIcon(props: any) {
@@ -284,46 +243,6 @@ function LaughIcon(props: any) {
   )
 }
 
-
-function MountainIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
-}
-
-
-function SearchIcon(props: any) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="11" cy="11" r="8" />
-      <path d="m21 21-4.3-4.3" />
-    </svg>
-  )
-}
 
 
 function SpaceIcon(props: any) {

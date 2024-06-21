@@ -5,11 +5,12 @@ import React from 'react'
 export default async function TrendingCards() {
   const { fetchTrendingAnime } = useAnime();
   const { results } = await fetchTrendingAnime();
+  if (!results) return <div>Error</div>
 
   return (
-      <>
-          {results.map((item, index) => (
-              <AnimeCard key={item.id + index} {...item} />))}
-      </>
+    <>
+      {results.map((item, index) => (
+        <AnimeCard key={item.id + index} {...item} />))}
+    </>
   )
 }

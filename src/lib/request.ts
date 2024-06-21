@@ -77,9 +77,9 @@ async function axiosLikeRequest({
         };
     } catch (error) {
         if (error) {
-            throw error;
+            return error;
         } else {
-            throw {
+            return {
                 message: error,
                 response: null
             };

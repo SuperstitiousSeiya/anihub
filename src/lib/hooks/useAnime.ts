@@ -1,5 +1,6 @@
 import { makeRequest } from "../request";
-import { AnimeSearchResponse, PopularAnimeResponse, RecentAnimeEpisodeResponse, TrendingAnimeResponse } from "../typings/anime.response";
+import { AnimeInfo } from "../typings/anime";
+import { AnimeInfoResponse, AnimeSearchResponse, PopularAnimeResponse, RecentAnimeEpisodeResponse, TrendingAnimeResponse } from "../typings/anime.response";
 
 const BASE_URL = "https://weebhub-media-provider.vercel.app/meta/anilist";
 
@@ -13,13 +14,13 @@ const useAnime = () => {
         return response.data;
     }
 
-    const fetchPopularAnime = async (page:number = 1, perPage:number = 10) => {
+    const fetchPopularAnime = async (page:number| string = 1, perPage:number | string = 10) => {
         const response = await animeFetch.get<PopularAnimeResponse>(`/popular`, {params: {page: page, perPage: perPage}});
         return response.data;
     }
 
 
-    const fetchTrendingAnime = async (page:number = 1, perPage:number = 10) => {
+    const fetchTrendingAnime = async (page:number | string = 1, perPage:number | string = 10) => {
         const response = await animeFetch.get<TrendingAnimeResponse>(`/trending`, {params: {page: page, perPage: perPage}, cache:"no-cache"});
         return response.data;
     }
@@ -29,14 +30,21 @@ const useAnime = () => {
         const param = {...params[0]}
         const response = await animeFetch.get<AnimeSearchResponse>(`/advanced-search`, {params: { ...param, query: query, page: page, perPage: perPage}});
         return response.data;
+    }   
+
+   const fetchAnimeInfo = async (id:string) => {
+        const response = await animeFetch.get<AnimeInfo>(`/info/${id}`, {cache:"no-cache"});
+        return response.data;
     }
+
+
 
     return {
         fetchAnimeRecentEpisodes,
         fetchPopularAnime,
         fetchTrendingAnime,
-        fetchAnimeBySearch
-
+        fetchAnimeBySearch,
+        fetchAnimeInfo
     }
 }
 

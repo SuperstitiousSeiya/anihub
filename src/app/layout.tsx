@@ -3,14 +3,19 @@ import './globals.css'
 import { cn } from "@/lib/utils"
 import { PropsWithChildren } from "react"
 import Navbar from "@/components/AnimeUi/Navbar"
+import { ThemeProvider } from "@/components/theme-provider"
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
 })
+import '@/components/styles/component.css'
 
 
+interface Props {
+  children: React.ReactNode,
+}
 
-export default function RootLayout({ children }: PropsWithChildren) {
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -20,11 +25,19 @@ export default function RootLayout({ children }: PropsWithChildren) {
           fontSans.variable
         )}
       >
-        <Navbar />
-        <main className="pt-20">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
 
-          {children}
-        </main>
+          <Navbar />
+          <main className="pt-20">
+            {children}
+          </main>
+        </ThemeProvider>
+
       </body>
     </html>
   )

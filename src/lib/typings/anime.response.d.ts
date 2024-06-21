@@ -1,4 +1,12 @@
-import { Anime, RecentAnimeEpisode } from "./anime";
+import { Anime, RecentAnimeEpisode, AnimeInfo } from "./anime";
+
+
+export interface Response<T = any> {
+    data: T;
+    status: number;
+    statusText: string;
+    headers: Record<string, string>;
+}
 
 
 export interface WithPaginationReponse<T = any> {
@@ -23,4 +31,10 @@ export interface AiringAnimeResponse extends WithPaginationReponse<Anime[] & { a
 export interface AnimeSearchResponse extends WithPaginationReponse<Anime[]> {
     totalResults: number;
     totalPages: number;
+}
+
+
+export interface AnimeInfoResponse {
+    results: AnimeInfo;
+    
 }
