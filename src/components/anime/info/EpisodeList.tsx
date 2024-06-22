@@ -37,7 +37,7 @@ export default function EpisodeList(props: AnimeInfo) {
                 onPageChange={handlePageClick}
                 pageCount={pageCount}
                 pageClassName={'item pagination-page '}
-                pageRangeDisplayed={5}
+                pageRangeDisplayed={4}
                 previousClassName={"item previous"}
                 previousLabel={<ChevronsLeft />}
             />

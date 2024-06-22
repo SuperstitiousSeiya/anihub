@@ -34,6 +34,7 @@ export default function Player({
         playsInline
         autoPlay
         load="visible"
+        
       >
         <MediaProvider>
           <Poster
