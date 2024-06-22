@@ -20,7 +20,7 @@ export default function EpisodeList(props: AnimeInfo) {
     };
 
     return (
-        <div>
+        <div className='w-full'>
             <h2 className="text-2xl font-bold mb-4">Episode List</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <EpisodeItem id={id} episodes={currentItems} />

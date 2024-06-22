@@ -13,7 +13,7 @@ export default function SideBarAnimeDetails(props: AnimeInfo) {
     }
 
     return (
-        <div className="grid gap-4">
+        <div className="grid gap-4 w-full">
             <Card className='h-fit'>
                 <CardHeader>
                     <CardTitle>Anime Details</CardTitle>

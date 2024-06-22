@@ -118,7 +118,7 @@ export default function SearchModal() {
                         className="pl-12 pr-4 py-2 rounded-md border border-muted focus:border-primary focus:ring-primary"
                     />
                 </div>
-                <div className="flex flex-col gap-4 max-h-[40rem] overflow-y-auto">
+                <div className="flex flex-col gap-4 max-h-[20rem] overflow-y-auto">
                     {searchResult}
                 </div>
             </DialogContent>

@@ -16,7 +16,7 @@ export default async function AnimeInfoPage({ params }: { params: { animeId: str
     }
     
     return (
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-8 px-4 md:px-6 py-8 md:py-12 container">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8 px-4 md:px-6 py-8 md:py-12 container w-full">
             <div className="grid gap-8">
                 <AnimeInfoTitle  {...animeInfo} />
                 <EpisodeList {...animeInfo} />

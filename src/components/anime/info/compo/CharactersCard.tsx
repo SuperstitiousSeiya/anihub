@@ -9,8 +9,8 @@ export default function CharactersCard(props: Character) {
     const voiceActor = voiceActors[0]
 
     return (
-        <Card className="flex items-center gap-6 p-6 rounded-xl bg-background w-[400px] flex-1">
-            <div className="w-24 h-24 rounded-full overflow-hidden">
+        <Card className="flex items-center gap-6 p-6 rounded-xl bg-background max-sm:w-[300px] w-[400px] flex-1">
+            <div className="w-24 h-24 max-sm:w-[12] max-sm:h-[12] min-h-12 min-w-12 rounded-full overflow-hidden">
                 <Image src={image} alt="Character Image" width={96} height={96} className="object-cover w-full h-full" />
             </div>
             <div className="grid gap-2 flex-1">

@@ -8,7 +8,7 @@ import HtmlText from '@/components/AnimeUi/HTMLText'
 
 export default function AnimeInfoTitle({ title, image, cover, description }: AnimeInfo) {
     return (
-        <div className="relative py-10">
+        <div className="relative py-10 w-full">
             <Image
                 src={cover}
                 alt="Cover Image"

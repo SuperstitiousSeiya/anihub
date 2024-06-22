@@ -14,7 +14,7 @@ export default function AnimeOverview({ characters }: AnimeInfo) {
         setCollapsed(!collapsed)
     }
     return (
-        <div>
+        <div className='w-full'>
             <h2 className="text-2xl font-bold mb-4" >Overview</h2>
             <div className="grid gap-4 ">
                 <div className='relative'>
