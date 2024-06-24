@@ -31,9 +31,9 @@ export default function AnimeCard({ image, id, title, description, rating }: Ani
                                 <span>{rating}</span>
                             </div>
                         </div>
-                        <HtmlText className="text-gray-300 line-clamp-5 text-wrap">
+                        {/* <HtmlText className="text-gray-300 line-clamp-5 text-wrap">
                             {description}
-                        </HtmlText>
+                        </HtmlText> */}
                         <div className="flex items-center gap-4 mt-4">
                             <Button variant="outline" size="sm">
                                 <PlayIcon className="w-4 h-4 mr-2" />

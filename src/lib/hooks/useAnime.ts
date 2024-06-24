@@ -1,5 +1,5 @@
 import { makeRequest } from "../request";
-import { AnimeInfo } from "../typings/anime";
+import { AnimeInfo, AnimeWatch } from "../typings/anime";
 import { AnimeInfoResponse, AnimeSearchResponse, PopularAnimeResponse, RecentAnimeEpisodeResponse, TrendingAnimeResponse } from "../typings/anime.response";
 
 const BASE_URL = "https://weebhub-media-provider.vercel.app/meta/anilist";
@@ -38,13 +38,20 @@ const useAnime = () => {
     }
 
 
+    const fetchAnimeWatch = async (id:string) => {
+        const response = await animeFetch.get<AnimeWatch>(`/watch/${id}`, {cache:"no-cache"});
+        return response.data;
+    }
+
+
 
     return {
         fetchAnimeRecentEpisodes,
         fetchPopularAnime,
         fetchTrendingAnime,
         fetchAnimeBySearch,
-        fetchAnimeInfo
+        fetchAnimeInfo,
+        fetchAnimeWatch
     }
 }
 

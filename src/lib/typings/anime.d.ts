@@ -158,3 +158,19 @@ export interface AnimeInfo {
     relations: Relation[];
     episodes: Episode[];
 }
+interface Headers {
+    Referer: string;
+}
+
+interface Source {
+    url: string;
+    isM3U8: boolean;
+    quality: string;
+}
+
+export interface AnimeWatch {
+    headers: Headers;
+    sources: Source[];
+    download: string;
+}
+
