@@ -133,6 +133,14 @@ export interface Anime {
   currentEpisodeCount?: number;
 }
 
+
+export interface Mapping {
+  id: string;
+  providerId: string;
+  similarity: number;
+  providerType: "ANIME" | "META";
+}
+
 export interface AnimeInfo {
   id: string;
   title: Title;
@@ -164,4 +172,5 @@ export interface AnimeInfo {
   characters: Character[];
   relations: Relation[];
   episodes: Episode[];
+  mappings: Mapping[];
 }

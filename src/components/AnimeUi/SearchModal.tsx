@@ -59,7 +59,7 @@ export default function SearchModal() {
             setResults(result.results);
             setLoading(false);
         } catch (e) {
-            console.log(e);
+            throw e;
         }
 
     }

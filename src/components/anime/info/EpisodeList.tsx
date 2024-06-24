@@ -1,13 +1,13 @@
 "use client"
 import React, { useState } from 'react'
-import { AnimeInfo } from '@/lib/typings/anime'
+import { AnimeInfo, Episode } from '@/lib/typings/anime'
 import ReactPaginate from 'react-paginate'
 
 import { ChevronsLeft, ChevronsRight } from 'lucide-react'
 import { EpisodeItem } from './compo/EpisodeItem'
-export default function EpisodeList(props: AnimeInfo) {
-    const {episodes, id} = props;
-    const items = episodes
+export default function EpisodeList(props: AnimeInfo & {animeEpisodes: Episode[]}) {
+    const { episodes, id, animeEpisodes } = props;
+    const items = animeEpisodes ? animeEpisodes : episodes
     const itemsPerPage = 12
     const [itemOffset, setItemOffset] = useState(0);
     const endOffset = itemOffset + itemsPerPage;
@@ -23,7 +23,7 @@ export default function EpisodeList(props: AnimeInfo) {
         <div className='w-full'>
             <h2 className="text-2xl font-bold mb-4">Episode List</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <EpisodeItem id={id} episodes={currentItems} />
+                <EpisodeItem id={id} episodes={currentItems} />
             </div>
             <ReactPaginate
                 activeClassName={'item active '}
