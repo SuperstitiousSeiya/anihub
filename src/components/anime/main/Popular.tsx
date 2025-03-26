@@ -6,6 +6,10 @@ export default async function PopularCards() {
     const { fetchPopularAnime } = useAnime();
     const { results } = await fetchPopularAnime();
 
+    if(!results) {  
+        return <>Error</>
+    }
+
     return (
         <>
             {results.map((item, index) => (
