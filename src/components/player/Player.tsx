@@ -4,17 +4,14 @@ import "@vidstack/react/player/styles/plyr/theme.css";
 import '@vidstack/react/player/styles/default/theme.css';
 import '@vidstack/react/player/styles/default/layouts/video.css';
 import { MediaPlayer, MediaProvider, Poster } from "@vidstack/react";
-import {
-  PlyrLayout,
-  plyrLayoutIcons,
-} from "@vidstack/react/player/layouts/plyr";
+
 
 import {
-    DefaultAudioLayout,
-    defaultLayoutIcons,
-    DefaultVideoLayout,
-  } from '@vidstack/react/player/layouts/default';
-  
+  DefaultAudioLayout,
+  defaultLayoutIcons,
+  DefaultVideoLayout,
+} from '@vidstack/react/player/layouts/default';
+
 
 
 export default function Player({
@@ -34,7 +31,7 @@ export default function Player({
         playsInline
         autoPlay
         load="visible"
-        
+
       >
         <MediaProvider>
           <Poster

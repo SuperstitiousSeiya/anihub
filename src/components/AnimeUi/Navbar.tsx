@@ -38,7 +38,6 @@ export default function Navbar() {
     },
   ];
 
-  console.log(pathname);
 
   return (
     <header className="bg-white dark:bg-background shadow-md top-0 fixed z-50 w-full">
@@ -56,12 +55,11 @@ export default function Navbar() {
             <Link
               key={link.name + index}
               href={link.href}
-              className={`text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors ${
-                (pathname.startsWith(link.href) && link.name !== "Home") ||
-                (link.name === "Home" && pathname == "/")
+              className={`text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors ${(pathname.startsWith(link.href) && link.name !== "Home") ||
+                  (link.name === "Home" && pathname == "/")
                   ? "dark:text-white"
                   : ""
-              }`}
+                }`}
               prefetch={false}
             >
               {link.name}
@@ -81,17 +79,16 @@ export default function Navbar() {
             <SheetContent className="">
               <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
-                  <SheetClose asChild>
+                  <SheetClose asChild key={link.name}>
                     <Link
-                      key={link.name}
+
                       href={link.href}
-                      className={`text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors ${
-                        (pathname.startsWith(link.href) &&
+                      className={`text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 transition-colors ${(pathname.startsWith(link.href) &&
                           link.name !== "Home") ||
-                        (link.name === "Home" && pathname == "/")
+                          (link.name === "Home" && pathname == "/")
                           ? "dark:text-white"
                           : ""
-                      }`}
+                        }`}
                       prefetch={false}
                     >
                       {link.name}

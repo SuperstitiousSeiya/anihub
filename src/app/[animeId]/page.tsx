@@ -8,7 +8,7 @@ import SideBarAnimeDetails from "@/components/anime/info/SideBarAnimeDetails"
 import useAnime from "@/lib/hooks/useAnime"
 export default async function AnimeInfoPage({ params }: { params: { animeId: string } }) {
     const { animeId } = params
-    const { fetchAnimeInfo } = useAnime()
+    const { fetchAnimeInfo, fetchGogoAnimeEpisodes  } = useAnime()
     const animeInfo = await fetchAnimeInfo(animeId)
     console.log(animeInfo);
     
